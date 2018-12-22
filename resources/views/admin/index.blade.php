@@ -1,426 +1,477 @@
-
 @extends('layouts.admin')
 
 @section('content')
-    <div id="wrapper">
-        <!--左侧导航开始-->
-        <nav class="navbar-default navbar-static-side" role="navigation">
-            <div class="nav-close"><i class="fa fa-times-circle"></i>
-            </div>
-            <div class="sidebar-collapse">
-                <ul class="nav" id="side-menu">
-                    <li class="nav-header">
-                        <div class="dropdown profile-element">
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="clear">
-                                    <span class="block m-t-xs" style="font-size:20px;">
-                                        <i class="fa fa-area-chart"></i>
-                                        <strong class="font-bold">hAdmin</strong>
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="logo-element">hAdmin
-                        </div>
-                    </li>
-                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                        <span class="ng-scope">分类</span>
-                    </li>
-                    <li>
-                        <a class="J_menuItem" href="index_v1.html">
-                            <i class="fa fa-home"></i>
-                            <span class="nav-label">主页</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa fa-bar-chart-o"></i>
-                            <span class="nav-label">统计图表</span>
-                            <span class="fa arrow"></span>
-                        </a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a class="J_menuItem" href="graph_echarts.html">百度ECharts</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="graph_flot.html">Flot</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="graph_morris.html">Morris.js</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="graph_rickshaw.html">Rickshaw</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="graph_peity.html">Peity</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="graph_sparkline.html">Sparkline</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="graph_metrics.html">图表组合</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="line dk"></li>
-                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                        <span class="ng-scope">分类</span>
-                    </li>
-                    <li>
-                        <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">信箱 </span><span class="label label-warning pull-right">16</span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="mailbox.html">收件箱</a>
-                            </li>
-                            <li><a class="J_menuItem" href="mail_detail.html">查看邮件</a>
-                            </li>
-                            <li><a class="J_menuItem" href="mail_compose.html">写信</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="form_basic.html">基本表单</a>
-                            </li>
-                            <li><a class="J_menuItem" href="form_validate.html">表单验证</a>
-                            </li>
-                            <li><a class="J_menuItem" href="form_advanced.html">高级插件</a>
-                            </li>
-                            <li><a class="J_menuItem" href="form_wizard.html">表单向导</a>
-                            </li>
-                            <li>
-                                <a href="#">文件上传 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="form_webuploader.html">百度WebUploader</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="form_file_upload.html">DropzoneJS</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">编辑器 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="form_editors.html">富文本编辑器</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="form_simditor.html">simditor</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="form_markdown.html">MarkDown编辑器</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="code_editor.html">代码编辑器</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="J_menuItem" href="layerdate.html">日期选择器layerDate</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">页面</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="contacts.html">联系人</a>
-                            </li>
-                            <li><a class="J_menuItem" href="profile.html">个人资料</a>
-                            </li>
-                            <li>
-                                <a href="#">项目管理 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="projects.html">项目</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="project_detail.html">项目详情</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="J_menuItem" href="teams_board.html">团队管理</a>
-                            </li>
-                            <li><a class="J_menuItem" href="social_feed.html">信息流</a>
-                            </li>
-                            <li><a class="J_menuItem" href="clients.html">客户管理</a>
-                            </li>
-                            <li><a class="J_menuItem" href="file_manager.html">文件管理器</a>
-                            </li>
-                            <li><a class="J_menuItem" href="calendar.html">日历</a>
-                            </li>
-                            <li>
-                                <a href="#">博客 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="blog.html">文章列表</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="article.html">文章详情</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="J_menuItem" href="faq.html">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="#">时间轴 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="timeline.html">时间轴</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="timeline_v2.html">时间轴v2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="J_menuItem" href="pin_board.html">标签墙</a>
-                            </li>
-                            <li>
-                                <a href="#">单据 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="invoice.html">单据</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="invoice_print.html">单据打印</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="J_menuItem" href="search_results.html">搜索结果</a>
-                            </li>
-                            <li><a class="J_menuItem" href="forum_main.html">论坛</a>
-                            </li>
-                            <li>
-                                <a href="#">即时通讯 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="chat_view.html">聊天窗口</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">登录注册相关 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="login.html" target="_blank">登录页面</a>
-                                    </li>
-                                    <li><a href="login_v2.html" target="_blank">登录页面v2</a>
-                                    </li>
-                                    <li><a href="register.html" target="_blank">注册页面</a>
-                                    </li>
-                                    <li><a href="lockscreen.html" target="_blank">登录超时</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="J_menuItem" href="404.html">404页面</a>
-                            </li>
-                            <li><a class="J_menuItem" href="500.html">500页面</a>
-                            </li>
-                            <li><a class="J_menuItem" href="empty_page.html">空白页</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="line dk"></li>
-                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                        <span class="ng-scope">分类</span>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI元素</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="typography.html">排版</a>
-                            </li>
-                            <li>
-                                <a href="#">字体图标 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a class="J_menuItem" href="fontawesome.html">Font Awesome</a>
-                                    </li>
-                                    <li>
-                                        <a class="J_menuItem" href="glyphicons.html">Glyphicon</a>
-                                    </li>
-                                    <li>
-                                        <a class="J_menuItem" href="iconfont.html">阿里巴巴矢量图标库</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">拖动排序 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="draggable_panels.html">拖动面板</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="agile_board.html">任务清单</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="J_menuItem" href="buttons.html">按钮</a>
-                            </li>
-                            <li><a class="J_menuItem" href="tabs_panels.html">选项卡 &amp; 面板</a>
-                            </li>
-                            <li><a class="J_menuItem" href="notifications.html">通知 &amp; 提示</a>
-                            </li>
-                            <li><a class="J_menuItem" href="badges_labels.html">徽章，标签，进度条</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="grid_options.html">栅格</a>
-                            </li>
-                            <li><a class="J_menuItem" href="plyr.html">视频、音频</a>
-                            </li>
-                            <li>
-                                <a href="#">弹框插件 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="layer.html">Web弹层组件layer</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="modal_window.html">模态窗口</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="sweetalert.html">SweetAlert</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">树形视图 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="jstree.html">jsTree</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="tree_view.html">Bootstrap Tree View</a>
-                                    </li>
-                                    <li><a class="J_menuItem" href="nestable_list.html">nestable</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="J_menuItem" href="toastr_notifications.html">Toastr通知</a>
-                            </li>
-                            <li><a class="J_menuItem" href="diff.html">文本对比</a>
-                            </li>
-                            <li><a class="J_menuItem" href="spinners.html">加载动画</a>
-                            </li>
-                            <li><a class="J_menuItem" href="widgets.html">小部件</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">表格</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="table_basic.html">基本表格</a>
-                            </li>
-                            <li><a class="J_menuItem" href="table_data_tables.html">DataTables</a>
-                            </li>
-                            <li><a class="J_menuItem" href="table_jqgrid.html">jqGrid</a>
-                            </li>
-                            <li><a class="J_menuItem" href="table_foo_table.html">Foo Tables</a>
-                            </li>
-                            <li><a class="J_menuItem" href="table_bootstrap.html">Bootstrap Table
-                                <span class="label label-danger pull-right">推荐</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="line dk"></li>
-                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                        <span class="ng-scope">分类</span>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">相册</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="basic_gallery.html">基本图库</a>
-                            </li>
-                            <li><a class="J_menuItem" href="carousel.html">图片切换</a>
-                            </li>
-                            <li><a class="J_menuItem" href="blueimp.html">Blueimp相册</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="J_menuItem" href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS动画</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-cutlery"></i> <span class="nav-label">工具 </span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="form_builder.html">表单构建器</a>
-                            </li>
-                        </ul>
-                    </li>
 
-                </ul>
-            </div>
-        </nav>
-        <!--左侧导航结束-->
-        <!--右侧部分开始-->
-        <div id="page-wrapper" class="gray-bg dashbard-1">
-            <div class="row border-bottom">
-                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                    <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-info " href="#"><i class="fa fa-bars"></i> </a>
-                        <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
-                            <div class="form-group">
-                                <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
-                            </div>
-                        </form>
-                    </div>
-                    <ul class="nav navbar-top-links navbar-right">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                                <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-messages">
-                                <li class="m-t-xs">
-                                    <div class="dropdown-messages-box">
-                                        <a href="profile.html" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a7.jpg">
-                                        </a>
-                                        <div class="media-body">
-                                            <small class="pull-right">46小时前</small>
-                                            <strong>小四</strong> 是不是只有我死了,你们才不骂爵迹
-                                            <br>
-                                            <small class="text-muted">3天前 2014.11.8</small>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <div class="dropdown-messages-box">
-                                        <a href="profile.html" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a4.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right text-navy">25小时前</small>
-                                            <strong>二愣子</strong> 呵呵
-                                            <br>
-                                            <small class="text-muted">昨天</small>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <div class="text-center link-block">
-                                        <a class="J_menuItem" href="mailbox.html">
-                                            <i class="fa fa-envelope"></i> <strong> 查看所有消息</strong>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                                <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-alerts">
-                                <li>
-                                    <a href="mailbox.html">
-                                        <div>
-                                            <i class="fa fa-envelope fa-fw"></i> 您有16条未读消息
-                                            <span class="pull-right text-muted small">4分钟前</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="profile.html">
-                                        <div>
-                                            <i class="fa fa-qq fa-fw"></i> 3条新回复
-                                            <span class="pull-right text-muted small">12分钟钱</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <div class="text-center link-block">
-                                        <a class="J_menuItem" href="notifications.html">
-                                            <strong>查看所有 </strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="row J_mainContent" id="content-main">
-                <iframe id="J_iframe" width="100%" height="100%" src="index_v1.html?v=4.0" frameborder="0" data-id="index_v1.html" seamless></iframe>
-            </div>
-        </div>
-        <!--右侧部分结束-->
-    </div>
+<section id="container">
+
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<!-- //market-->
+		<div class="market-updates">
+			<div class="col-md-3 market-update-gd">
+				<div class="market-update-block clr-block-2">
+					<div class="col-md-4 market-update-right">
+						<i class="fa fa-eye"> </i>
+					</div>
+					 <div class="col-md-8 market-update-left">
+					 <h4>Visitors</h4>
+					<h3>13,500</h3>
+					<p>Other hand, we denounce</p>
+				  </div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-3 market-update-gd">
+				<div class="market-update-block clr-block-1">
+					<div class="col-md-4 market-update-right">
+						<i class="fa fa-users" ></i>
+					</div>
+					<div class="col-md-8 market-update-left">
+					<h4>Users</h4>
+						<h3>1,250</h3>
+						<p>Other hand, we denounce</p>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-3 market-update-gd">
+				<div class="market-update-block clr-block-3">
+					<div class="col-md-4 market-update-right">
+						<i class="fa fa-usd"></i>
+					</div>
+					<div class="col-md-8 market-update-left">
+						<h4>Sales</h4>
+						<h3>1,500</h3>
+						<p>Other hand, we denounce</p>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-3 market-update-gd">
+				<div class="market-update-block clr-block-4">
+					<div class="col-md-4 market-update-right">
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					</div>
+					<div class="col-md-8 market-update-left">
+						<h4>Orders</h4>
+						<h3>1,500</h3>
+						<p>Other hand, we denounce</p>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+		   <div class="clearfix"> </div>
+		</div>
+		<!-- //market-->
+		<div class="row">
+			<div class="panel-body">
+				<div class="col-md-12 w3ls-graph">
+					<!--agileinfo-grap-->
+						<div class="agileinfo-grap">
+							<div class="agileits-box">
+								<header class="agileits-box-header clearfix">
+									<h3>Visitor Statistics</h3>
+										<div class="toolbar">
+
+
+										</div>
+								</header>
+								<div class="agileits-box-body clearfix">
+									<div id="hero-area"></div>
+								</div>
+							</div>
+						</div>
+	<!--//agileinfo-grap-->
+
+				</div>
+			</div>
+		</div>
+		<div class="agil-info-calendar">
+		<!-- calendar -->
+		<div class="col-md-6 agile-calendar">
+			<div class="calendar-widget">
+                <div class="panel-heading ui-sortable-handle">
+					<span class="panel-icon">
+                      <i class="fa fa-calendar-o"></i>
+                    </span>
+                    <span class="panel-title"> Calendar Widget</span>
+                </div>
+				<!-- grids -->
+					<div class="agile-calendar-grid">
+						<div class="page">
+
+							<div class="w3l-calendar-left">
+								<div class="calendar-heading">
+
+								</div>
+								<div class="monthly" id="mycalendar"></div>
+							</div>
+
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+			</div>
+		</div>
+		<!-- //calendar -->
+		<div class="col-md-6 w3agile-notifications">
+			<div class="notifications">
+				<!--notification start-->
+
+					<header class="panel-heading">
+						Notification
+					</header>
+					<div class="notify-w3ls">
+						<div class="alert alert-info clearfix">
+							<span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
+							<div class="notification-info">
+								<ul class="clearfix notification-meta">
+									<li class="pull-left notification-sender"><span><a href="#">Jonathan Smith</a></span> send you a mail </li>
+									<li class="pull-right notification-time">1 min ago</li>
+								</ul>
+								<p>
+									Urgent meeting for next proposal
+								</p>
+							</div>
+						</div>
+						<div class="alert alert-danger">
+							<span class="alert-icon"><i class="fa fa-facebook"></i></span>
+							<div class="notification-info">
+								<ul class="clearfix notification-meta">
+									<li class="pull-left notification-sender"><span><a href="#">Jonathan Smith</a></span> mentioned you in a post </li>
+									<li class="pull-right notification-time">7 Hours Ago</li>
+								</ul>
+								<p>
+									Very cool photo jack
+								</p>
+							</div>
+						</div>
+						<div class="alert alert-success ">
+							<span class="alert-icon"><i class="fa fa-comments-o"></i></span>
+							<div class="notification-info">
+								<ul class="clearfix notification-meta">
+									<li class="pull-left notification-sender">You have 5 message unread</li>
+									<li class="pull-right notification-time">1 min ago</li>
+								</ul>
+								<p>
+									<a href="#">Anjelina Mewlo, Jack Flip</a> and <a href="#">3 others</a>
+								</p>
+							</div>
+						</div>
+						<div class="alert alert-warning ">
+							<span class="alert-icon"><i class="fa fa-bell-o"></i></span>
+							<div class="notification-info">
+								<ul class="clearfix notification-meta">
+									<li class="pull-left notification-sender">Domain Renew Deadline 7 days ahead</li>
+									<li class="pull-right notification-time">5 Days Ago</li>
+								</ul>
+								<p>
+									Next 5 July Thursday is the last day
+								</p>
+							</div>
+						</div>
+						<div class="alert alert-info clearfix">
+							<span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
+							<div class="notification-info">
+								<ul class="clearfix notification-meta">
+									<li class="pull-left notification-sender"><span><a href="#">Jonathan Smith</a></span> send you a mail </li>
+									<li class="pull-right notification-time">1 min ago</li>
+								</ul>
+								<p>
+									Urgent meeting for next proposal
+								</p>
+							</div>
+						</div>
+
+					</div>
+
+				<!--notification end-->
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+			<!-- tasks -->
+			<div class="agile-last-grids">
+				<div class="col-md-4 agile-last-left">
+					<div class="agile-last-grid">
+						<div class="area-grids-heading">
+							<h3>Monthly</h3>
+						</div>
+						<div id="graph7"></div>
+						<script>
+						// This crosses a DST boundary in the UK.
+						Morris.Area({
+						  element: 'graph7',
+						  data: [
+							{x: '2013-03-30 22:00:00', y: 3, z: 3},
+							{x: '2013-03-31 00:00:00', y: 2, z: 0},
+							{x: '2013-03-31 02:00:00', y: 0, z: 2},
+							{x: '2013-03-31 04:00:00', y: 4, z: 4}
+						  ],
+						  xkey: 'x',
+						  ykeys: ['y', 'z'],
+						  labels: ['Y', 'Z']
+						});
+						</script>
+
+					</div>
+				</div>
+				<div class="col-md-4 agile-last-left agile-last-middle">
+					<div class="agile-last-grid">
+						<div class="area-grids-heading">
+							<h3>Daily</h3>
+						</div>
+						<div id="graph8"></div>
+						<script>
+						/* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
+						var day_data = [
+						  {"period": "2016-10-01", "licensed": 3407, "sorned": 660},
+						  {"period": "2016-09-30", "licensed": 3351, "sorned": 629},
+						  {"period": "2016-09-29", "licensed": 3269, "sorned": 618},
+						  {"period": "2016-09-20", "licensed": 3246, "sorned": 661},
+						  {"period": "2016-09-19", "licensed": 3257, "sorned": 667},
+						  {"period": "2016-09-18", "licensed": 3248, "sorned": 627},
+						  {"period": "2016-09-17", "licensed": 3171, "sorned": 660},
+						  {"period": "2016-09-16", "licensed": 3171, "sorned": 676},
+						  {"period": "2016-09-15", "licensed": 3201, "sorned": 656},
+						  {"period": "2016-09-10", "licensed": 3215, "sorned": 622}
+						];
+						Morris.Bar({
+						  element: 'graph8',
+						  data: day_data,
+						  xkey: 'period',
+						  ykeys: ['licensed', 'sorned'],
+						  labels: ['Licensed', 'SORN'],
+						  xLabelAngle: 60
+						});
+						</script>
+					</div>
+				</div>
+				<div class="col-md-4 agile-last-left agile-last-right">
+					<div class="agile-last-grid">
+						<div class="area-grids-heading">
+							<h3>Yearly</h3>
+						</div>
+						<div id="graph9"></div>
+						<script>
+						var day_data = [
+						  {"elapsed": "I", "value": 34},
+						  {"elapsed": "II", "value": 24},
+						  {"elapsed": "III", "value": 3},
+						  {"elapsed": "IV", "value": 12},
+						  {"elapsed": "V", "value": 13},
+						  {"elapsed": "VI", "value": 22},
+						  {"elapsed": "VII", "value": 5},
+						  {"elapsed": "VIII", "value": 26},
+						  {"elapsed": "IX", "value": 12},
+						  {"elapsed": "X", "value": 19}
+						];
+						Morris.Line({
+						  element: 'graph9',
+						  data: day_data,
+						  xkey: 'elapsed',
+						  ykeys: ['value'],
+						  labels: ['value'],
+						  parseTime: false
+						});
+						</script>
+
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		<!-- //tasks -->
+		<div class="agileits-w3layouts-stats">
+					<div class="col-md-4 stats-info widget">
+						<div class="stats-info-agileits">
+							<div class="stats-title">
+								<h4 class="title">Browser Stats</h4>
+							</div>
+							<div class="stats-body">
+								<ul class="list-unstyled">
+									<li>GoogleChrome <span class="pull-right">85%</span>
+										<div class="progress progress-striped active progress-right">
+											<div class="bar green" style="width:85%;"></div>
+										</div>
+									</li>
+									<li>Firefox <span class="pull-right">35%</span>
+										<div class="progress progress-striped active progress-right">
+											<div class="bar yellow" style="width:35%;"></div>
+										</div>
+									</li>
+									<li>Internet Explorer <span class="pull-right">78%</span>
+										<div class="progress progress-striped active progress-right">
+											<div class="bar red" style="width:78%;"></div>
+										</div>
+									</li>
+									<li>Safari <span class="pull-right">50%</span>
+										<div class="progress progress-striped active progress-right">
+											<div class="bar blue" style="width:50%;"></div>
+										</div>
+									</li>
+									<li>Opera <span class="pull-right">80%</span>
+										<div class="progress progress-striped active progress-right">
+											<div class="bar light-blue" style="width:80%;"></div>
+										</div>
+									</li>
+									<li class="last">Others <span class="pull-right">60%</span>
+										<div class="progress progress-striped active progress-right">
+											<div class="bar orange" style="width:60%;"></div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8 stats-info stats-last widget-shadow">
+						<div class="stats-last-agile">
+							<table class="table stats-table ">
+								<thead>
+									<tr>
+										<th>S.NO</th>
+										<th>PRODUCT</th>
+										<th>STATUS</th>
+										<th>PROGRESS</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>Lorem ipsum</td>
+										<td><span class="label label-success">In progress</span></td>
+										<td><h5>85% <i class="fa fa-level-up"></i></h5></td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>Aliquam</td>
+										<td><span class="label label-warning">New</span></td>
+										<td><h5>35% <i class="fa fa-level-up"></i></h5></td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>Lorem ipsum</td>
+										<td><span class="label label-danger">Overdue</span></td>
+										<td><h5 class="down">40% <i class="fa fa-level-down"></i></h5></td>
+									</tr>
+									<tr>
+										<th scope="row">4</th>
+										<td>Aliquam</td>
+										<td><span class="label label-info">Out of stock</span></td>
+										<td><h5>100% <i class="fa fa-level-up"></i></h5></td>
+									</tr>
+									<tr>
+										<th scope="row">5</th>
+										<td>Lorem ipsum</td>
+										<td><span class="label label-success">In progress</span></td>
+										<td><h5 class="down">10% <i class="fa fa-level-down"></i></h5></td>
+									</tr>
+									<tr>
+										<th scope="row">6</th>
+										<td>Aliquam</td>
+										<td><span class="label label-warning">New</span></td>
+										<td><h5>38% <i class="fa fa-level-up"></i></h5></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+</section>
+ <!-- footer -->
+		  <div class="footer">
+			<div class="wthree-copyright">
+			  <p>Copyright &copy; 2017.Company name All rights reserved.</p>
+			</div>
+		  </div>
+  <!-- / footer -->
+</section>
+<!--main content end-->
+</section>
+<!-- morris JavaScript -->
+<script>
+    $(document).ready(function() {
+        //BOX BUTTON SHOW AND CLOSE
+        jQuery('.small-graph-box').hover(function() {
+            jQuery(this).find('.box-button').fadeIn('fast');
+        }, function() {
+            jQuery(this).find('.box-button').fadeOut('fast');
+        });
+        jQuery('.small-graph-box .box-close').click(function() {
+            jQuery(this).closest('.small-graph-box').fadeOut(200);
+            return false;
+        });
+
+        //CHARTS
+        function gd(year, day, month) {
+            return new Date(year, month - 1, day).getTime();
+        }
+
+        graphArea2 = Morris.Area({
+            element: 'hero-area',
+            padding: 10,
+            behaveLikeLine: true,
+            gridEnabled: false,
+            gridLineColor: '#dddddd',
+            axes: true,
+            resize: true,
+            smooth:true,
+            pointSize: 0,
+            lineWidth: 0,
+            fillOpacity:0.85,
+            data: [
+                {period: '2015 Q1', iphone: 2668, ipad: null, itouch: 2649},
+                {period: '2015 Q2', iphone: 15780, ipad: 13799, itouch: 12051},
+                {period: '2015 Q3', iphone: 12920, ipad: 10975, itouch: 9910},
+                {period: '2015 Q4', iphone: 8770, ipad: 6600, itouch: 6695},
+                {period: '2016 Q1', iphone: 10820, ipad: 10924, itouch: 12300},
+                {period: '2016 Q2', iphone: 9680, ipad: 9010, itouch: 7891},
+                {period: '2016 Q3', iphone: 4830, ipad: 3805, itouch: 1598},
+                {period: '2016 Q4', iphone: 15083, ipad: 8977, itouch: 5185},
+                {period: '2017 Q1', iphone: 10697, ipad: 4470, itouch: 2038},
+
+            ],
+            lineColors:['#eb6f6f','#926383','#eb6f6f'],
+            xkey: 'period',
+            redraw: true,
+            ykeys: ['iphone', 'ipad', 'itouch'],
+            labels: ['All Visitors', 'Returning Visitors', 'Unique Visitors'],
+            pointSize: 2,
+            hideHover: 'auto',
+            resize: true
+        });
+    });
+</script>
+<!-- calendar -->
+<script type="text/javascript" src="{{asset('admin/js/monthly.js')}}"></script>
+<script type="text/javascript">
+    $(window).load( function() {
+
+        $('#mycalendar').monthly({
+            mode: 'event',
+
+        });
+
+        $('#mycalendar2').monthly({
+            mode: 'picker',
+            target: '#mytarget',
+            setWidth: '250px',
+            startHidden: true,
+            showTrigger: '#mytarget',
+            stylePast: true,
+            disablePast: true
+        });
+
+        switch(window.location.protocol) {
+            case 'http:':
+            case 'https:':
+                // running on a server, should be good.
+                break;
+            case 'file:':
+            //alert('Just a heads-up, events will not work when run locally.');
+        }
+
+    });
+</script>
+<!-- //calendar -->
 @endsection
-

@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,11 +10,22 @@
 |
 */
 
-Route::get('/', function () {
-    return '你瞅啥';
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'Admin\IndexController@index');
+Route::get('home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'lailelaodi','namespace' => 'Admin'],function ()
+{
+    Route::any('login', 'LoginController@login');
+    Route::any('logout', 'LoginController@logout');
+    Route::group(['middleware' => 'admin.login'],function (){
+        Route::get('/', 'IndexController@index');
+        Route::get('index', 'IndexController@index');
+    });
+}
+);
+Route::group(['namespace' => 'Home'],function (){
+    Route::get('index', 'IndexController@index')->name('home');
+    Route::get('/', 'IndexController@index')->name('home');
+});
+
