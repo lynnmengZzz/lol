@@ -20,4 +20,9 @@ class IndexController extends Controller
     {
         return view('admin.index');
     }
+
+    public function index_info()
+    {
+        return view('admin.index_v1');
+    }
 }

@@ -19,3 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'Admin\IndexController@index');
+Route::group(['prefix' => 'admin'],function (){
+    Route::get('index_info','Admin\IndexController@index_info');
+});

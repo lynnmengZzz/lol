@@ -20,7 +20,7 @@
     <link href="{{asset('admin/css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('admin/css/style.css?v=4.1.0')}}" rel="stylesheet">
 </head>
-<body>
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
 @yield('content')
 
 <!-- 全局js -->
